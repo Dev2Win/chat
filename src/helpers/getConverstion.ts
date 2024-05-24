@@ -1,4 +1,4 @@
-import { ConversationModel } from "../../../models/conversationModel"
+import ConversationModel from "../models/Conversation.model"
 
 export const getConversation = async(currentUserId : any)=>{
     if(currentUserId){
@@ -29,7 +29,6 @@ export const getConversation = async(currentUserId : any)=>{
                 lastMsg : conv.messages[conv?.messages?.length - 1]
             }
         })
-console.log(conversation);
 
         return conversation
     }else{
