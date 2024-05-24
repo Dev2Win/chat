@@ -1,6 +1,7 @@
 import express from 'express';
 import { Server } from 'socket.io';
 import http from 'http';
+import cors from 'cors'
 import User from './models/User.model';
 import { connectToDB } from './helpers/db';
 import ConversationModel from './models/Conversation.model';
@@ -11,6 +12,7 @@ const FRONTEND_ENDPOINT = process.env.FRONTEND_ENDPOINT || "https://dev-2-winn.v
 const port = process.env.PORT || 3001;
 
 export const app = express();
+app.use(cors());
 // socket connection
 const server = http.createServer(app);
 
